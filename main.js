@@ -12,7 +12,7 @@ $('.get-device').on('click',function(){
     })
     .then(characteristic => {
       // Set up event listener for when characteristic value changes.
-      characteristic.addEventListener('characteristicvaluechanged', handleBatteryLevelChanged);
+      characteristic.addEventListener('characteristicvaluechanged', handleBatteryLevelChanged());
 
       // Reading Battery Level...
       return characteristic.readValue();
