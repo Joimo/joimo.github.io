@@ -1,1 +1,0 @@
-# joimo.github.io
