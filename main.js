@@ -1,4 +1,5 @@
 console.log('inicio');
+console.log('inicio2');
 $('.get-device').on('click',function(){
     navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
     .then(device => {
