@@ -21,9 +21,9 @@ $('.get-device').on('click',function(){
     })
 
     .catch(error => { console.log(error); });
-});
 
-function handleBatteryLevelChanged(event) {
-  let batteryLevel = event.target.value.getUint8(0);
-  console.log('Battery percentage is ' + batteryLevel);
-}
+    function handleBatteryLevelChanged(event) {
+      let batteryLevel = event.target.value.getUint8(0);
+      console.log('Battery percentage is ' + batteryLevel);
+    }
+});
