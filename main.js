@@ -2,11 +2,12 @@ console.log('inicio');
 
 $('.get-device').on('click',function(){
   console.log('Requesting Bluetooth Device...');
-  navigator.bluetooth.requestDevice(
-    {filters: [{services: ['battery_service']}]})
+  navigator.bluetooth.requestDevice( {filters: [{services: ['battery_service']}]})
   .then(device => {
+    console.log(device);
+        $('.device-name').val(device.name)
     console.log('Connecting to GATT Server...');
-    return device.gatt.connect();
+        return device.gatt.connect();
   })
   .then(server => {
     console.log('Getting Battery Service...');
@@ -22,7 +23,8 @@ $('.get-device').on('click',function(){
   })
   .then(value => {
     let batteryLevel = value.getUint8(0);
-    console.log('> Battery Level is ' + batteryLevel + '%');
+    console.log('> Battery Level is ' + batteryLevel + '%');    
+    $('.device-level').val(batteryLevel)
   })
   .catch(error => {
     log('Argh! ' + error);
