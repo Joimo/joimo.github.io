@@ -2,12 +2,7 @@ var i = 1;
 async function btn() {
   try {
     console.log('Requesting Bluetooth Device...');
-    const device = await navigator.bluetooth.requestDevice({
-       filters: [
-        { name: 'redmi'}, 
-        {services: ['battery_service']}        
-        ]        
-      });
+    const device = await navigator.bluetooth.requestDevice({filters: [{services: ['battery_service']}]});
 
     $('.device-name').val(device.name)
  
