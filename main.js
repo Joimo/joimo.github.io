@@ -1,6 +1,6 @@
-console.log('Iniciando..');
+console.log('inicio');
 
-function onButtonClick() {
+$('.get-device').on('click',function(){
   log('Requesting Bluetooth Device...');
   navigator.bluetooth.requestDevice(
     {filters: [{services: ['battery_service']}]})
@@ -27,4 +27,5 @@ function onButtonClick() {
   .catch(error => {
     log('Argh! ' + error);
   });
-}
+
+});
