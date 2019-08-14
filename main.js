@@ -15,7 +15,7 @@ async function btn() {
     const characteristic = await service.getCharacteristic('battery_level');
     
     
-    console.log('Reading Battery Level...');
+    console.log('Reading Battery Level...', bat());
     
       
     async function bat(){
