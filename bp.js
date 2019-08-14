@@ -1,30 +1,36 @@
+//FUNCIONA
+
 console.log('inicio');
 
 $('.get-device').on('click',function(){
-    navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-    .then(device => {
-        console.log(device);
+  console.log('Requesting Bluetooth Device...');
+  navigator.bluetooth.requestDevice( {filters: [{services: ['battery_service']}]})
+  .then(device => {
+    console.log(device);
         $('.device-name').val(device.name)
-    })
-    .then(service => {
-      console.log('Getting Battery Level Characteristic...');
-      return service.getCharacteristic('battery_level');
-    })
-    .then(characteristic => {
-      // Set up event listener for when characteristic value changes.
-      characteristic.addEventListener('characteristicvaluechanged', handleBatteryLevelChanged());
+    console.log('Connecting to GATT Server...');
+        return device.gatt.connect();
+  })
+  .then(server => {
+    console.log('Getting Battery Service...');
+    return server.getPrimaryService('battery_service');
+  })
+  .then(service => {
+    console.log('Getting Battery Level Characteristic...');
+    return service.getCharacteristic('battery_level');
+  })
+  .then(characteristic => {
+    console.log('Reading Battery Level...');
+    return characteristic.readValue();
+  })
+  .then(value => {
+    let batteryLevel = value.getUint8(0);
+    console.log('> Battery Level is ' + batteryLevel + '%');              
+    $('.device-level').val(batteryLevel)
+    
+  })
+  .catch(error => {
+    log('Argh! ' + error);
+  });
 
-      // Reading Battery Level...
-      return characteristic.readValue();
-    })
-    .then(value => {
-      console.log('Battery percentage is ' + value.getUint8(0));
-    })
-
-    .catch(error => { console.log(error); });
-
-    function handleBatteryLevelChanged(event) {
-      let batteryLevel = event.target.value.getUint8(0);
-      console.log('Battery percentage is ' + batteryLevel);
-    }
 });
