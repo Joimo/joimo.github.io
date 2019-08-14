@@ -17,22 +17,15 @@ async function btn() {
     
     console.log('Reading Battery Level...');
     
-    while (i==1) {
-      bat();
-      Thread.sleep(3000);
-    };
       
     async function bat(){
+      console.log('OK');
       const value = await characteristic.readValue();
-
       console.log('> Battery Level is ' + value.getUint8(0) + '%'); 
+      setTimeout('bat()',1000);
     };
-
-    
-    
-    
-    
+            
   } catch (error) {
-    console.log('Argh! ' + error);
+    console.log('Errooo! ' + error);
   }
 }
