@@ -1,4 +1,4 @@
-async function onButtonClick() {
+async function btn() {
   try {
     log('Requesting Bluetooth Device...');
     const device = await navigator.bluetooth.requestDevice({
