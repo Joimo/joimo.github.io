@@ -1,8 +1,8 @@
 console.log('inicio');
 
-$('.get-device').on('click',function(){
+$('.get-device').on('click', async function(){
   console.log('Requesting Bluetooth Device...');
-  await  navigator.bluetooth.requestDevice( {filters: [{services: ['battery_service']}]})
+  await navigator.bluetooth.requestDevice( {filters: [{services: ['battery_service']}]})
   .then(device => {
     console.log(device);
         $('.device-name').val(device.name)
