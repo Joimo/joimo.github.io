@@ -1,36 +1,23 @@
-console.log('inicio');
+async function onButtonClick() {
+  try {
+    log('Requesting Bluetooth Device...');
+    const device = await navigator.bluetooth.requestDevice({
+        filters: [{services: ['battery_service']}]});
 
-$('.get-device').on('click', async function(){
-  console.log('Requesting Bluetooth Device...');
-  await navigator.bluetooth.requestDevice( {filters: [{services: ['battery_service']}]})
-  .then(device => {
-    console.log(device);
-        $('.device-name').val(device.name)
-    console.log('Connecting to GATT Server...');
-        return await device.gatt.connect();
-  })
-  .then(server => {
-    console.log('Getting Battery Service...');
-    return await server.getPrimaryService('battery_service');
-  })
-  .then(service => {
-    console.log('Getting Battery Level Characteristic...');
-    return await service.getCharacteristic('battery_level');
-  })
-  .then(characteristic => {
-    console.log('Reading Battery Level...');
-    return await characteristic.readValue();
-  })
-  setInterval(async() => {
-    
-      let batteryLevel = await value.getUint8(0);
-      console.log('> Battery Level is ' + batteryLevel + '%');              
-      $('.device-level').val(batteryLevel)
-      
-    
-  })
-    .catch(error => {
+    log('Connecting to GATT Server...');
+    const server = await device.gatt.connect();
+
+    log('Getting Battery Service...');
+    const service = await server.getPrimaryService('battery_service');
+
+    log('Getting Battery Level Characteristic...');
+    const characteristic = await service.getCharacteristic('battery_level');
+
+    log('Reading Battery Level...');
+    const value = await characteristic.readValue();
+
+    log('> Battery Level is ' + value.getUint8(0) + '%');
+  } catch(error) {
     log('Argh! ' + error);
-  });
-
-});
+  }
+}
