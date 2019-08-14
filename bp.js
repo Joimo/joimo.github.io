@@ -5,12 +5,11 @@ $('.get-device').on('click',function(){
     .then(device => {
         console.log(device);
         $('.device-name').val(device.name)
-        .then(service => {
-          console.log('Getting Battery Level Characteristic...');
-          return service.getCharacteristic('battery_level');
-        })
-      })
-    
+    })
+    .then(service => {
+      console.log('Getting Battery Level Characteristic...');
+      return service.getCharacteristic('battery_level');
+    })
     .then(characteristic => {
       // Set up event listener for when characteristic value changes.
       characteristic.addEventListener('characteristicvaluechanged', handleBatteryLevelChanged());
