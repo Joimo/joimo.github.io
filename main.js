@@ -5,7 +5,7 @@ $('.get-device').on('click',function(){
     .then(device => {
         console.log(device);
         $('.device-name').val(device.name);
-        $('.device-level').val(device.name);        
+        //$('.device-level').val(device.name);        
     })
   .then(device => device.connectGATT())
   .then(server => {
@@ -17,6 +17,10 @@ $('.get-device').on('click',function(){
   .then(characteristic => {
     // Read battery level...
     return characteristic.readValue();
-  });
-        
+  })
+  .then(value => {
+    let batteryLevel = value.getUint8(0);
+    log('> Battery Level is ' + batteryLevel + '%');
+    $('.device-level').val(batteryLevel);      
+  })  
 });
