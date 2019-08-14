@@ -1,3 +1,4 @@
+var i = 1;
 async function btn() {
   try {
     console.log('Requesting Bluetooth Device...');
@@ -16,7 +17,7 @@ async function btn() {
     
     console.log('Reading Battery Level...');
     
-    while (true) {
+    while (i==1) {
       setTimeout(function() {bat(); }, 5000);
     }  
       
