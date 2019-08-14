@@ -13,15 +13,21 @@ async function btn() {
     console.log('Getting Battery Level Characteristic...');
     const characteristic = await service.getCharacteristic('battery_level');
     
-    setInterval(asyn function(){
-      console.log('Reading Battery Level...');
-      
-      const value = await characteristic.readValue();
+    setInterval(load(),1000);
 
-      console.log('> Battery Level is ' + value.getUint8(0) + '%'); 
-    },1000);
+
+
+      async function load({
+        console.log('Reading Battery Level...');
+      
+        const value = await characteristic.readValue();
+  
+        console.log('> Battery Level is ' + value.getUint8(0) + '%');
+      });
+    
     
   } catch (error) {
     console.log('Argh! ' + error);
   }
-}
+};
+
