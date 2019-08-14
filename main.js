@@ -5,22 +5,29 @@ $('.get-device').on('click',function(){
     .then(device => {
         console.log(device);
         $('.device-name').val(device.name);
-        //$('.device-level').val(device.name);        
+        
     })
-  .then(device => device.connectGATT())
-  .then(server => {
-    return server.getPrimaryService('battery_service');
-  })
-  .then(service => {
-    return service.getCharacteristic('battery_level');
-  })
-  .then(characteristic => {
-    // Read battery level...
-    return characteristic.readValue();
-  })
-  .then(value => {
-    let batteryLevel = value.getUint8(0);
-    log('> Battery Level is ' + batteryLevel + '%');
-    $('.device-level').val(batteryLevel);      
-  })  
+    .then(device => {
+      log('Connecting to GATT Server...');
+      return device.gatt.connect();
+    })
+    .then(server => {
+      log('Getting Battery Service...');
+      return server.getPrimaryService('battery_service');
+    })
+    .then(service => {
+      log('Getting Battery Level Characteristic...');
+      return service.getCharacteristic('battery_level');
+    })
+    .then(characteristic => {
+      log('Reading Battery Level...');
+      return characteristic.readValue();
+    })
+    .then(value => {
+      let batteryLevel = value.getUint8(0);
+      log('> Battery Level is ' + batteryLevel + '%');
+    })
+    .catch(error => {
+      log('Argh! ' + error);
+    });
 });
