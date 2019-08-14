@@ -19,7 +19,7 @@ async function btn() {
     setTimeout(function() {bat(); }, 5000);
 
     async function bat(){
-      const value = await acharacteristic.readValue();
+      const value = await characteristic.readValue();
 
       console.log('> Battery Level is ' + value.getUint8(0) + '%'); 
     };
