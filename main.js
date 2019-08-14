@@ -2,7 +2,13 @@ var i = 1;
 async function btn() {
   try {
     console.log('Requesting Bluetooth Device...');
-    const device = await navigator.bluetooth.requestDevice({ filters: [{services: ['battery_service']}]});
+    const device = await navigator.bluetooth.requestDevice({
+       filters: [
+        {namePrefix: 'redmi'} 
+        //{services: ['battery_service']}        
+        ]        
+      });
+
     $('.device-name').val(device.name)
  
     console.log('Connecting to GATT Server...');
@@ -16,17 +22,15 @@ async function btn() {
     
     
     console.log('Reading Battery Level...',bat());
-    
-    
-     
+             
     async function bat(){
       setTimeout(async function  () {
         console.log('OK');
-      const value = await characteristic.readValue();
-      var batteryLevel = value.getUint8(0);
-      console.log('> Battery Level is ' + batteryLevel + '%');       
-      $('.device-level').val(batteryLevel)
-      bat();
+        const value = await characteristic.readValue();
+        var batteryLevel = value.getUint8(0);
+        console.log('> Battery Level is ' + batteryLevel + '%');       
+        $('.device-level').val(batteryLevel)
+        bat();
       },5000);            
     };
             
