@@ -18,8 +18,9 @@ async function btn() {
     console.log('Reading Battery Level...');
     
     while (i==1) {
-      setTimeout(function() {bat(); }, 1000);
-    }  
+      bat();
+      Thread.sleep(3000);
+    };
       
     async function bat(){
       const value = await characteristic.readValue();
