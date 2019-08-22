@@ -24,8 +24,8 @@ function connectButtonPointerUpHandler() {
   navigator.bluetooth.requestDevice({
     filters:
       [
-        { namePrefix: 'B' },
         { name: 'BLE' },
+        { namePrefix: 'B'},
         { services: [SEND_SERVICE] },
       ]
   })
