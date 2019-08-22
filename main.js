@@ -33,5 +33,6 @@ async function btn() {
             
   } catch (error) {
     console.log('Errooo! ' + error);
+    $('.device-level').val(error);
   }
 }
