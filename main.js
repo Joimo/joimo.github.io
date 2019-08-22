@@ -1,12 +1,19 @@
+if (!navigator.bluetooth) {
+  alert('Desculpe, seu navegador não suporta Bluetooth API');
+}
+
+
+const SEND_SERVICE = 0xFFE0;
+
 async function btn() {
   try {
     console.log('Requesting Bluetooth Device...');
     const device = await navigator.bluetooth.requestDevice({
-      filters: [{
-        //services: ['battery_service']
-        name: 'BLE'
-      }],
-      optionalServices: ['battery_service']
+      filters: [
+        { name: 'BLE' },
+        { namePrefix: 'B'},
+        { services: [SEND_SERVICE] },
+      ]      
     });    
 
     $('.device-name').val(device.name)
