@@ -2,7 +2,7 @@ function connect() {
   const device = navigator.bluetooth.requestDevice({
     filters:
     [
-      { name: 'BLE'}
+      { namePrefix: 'BLE'}
     ]
   });
   console.log(device.name);
