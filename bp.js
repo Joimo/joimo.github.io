@@ -34,3 +34,17 @@ $('.get-device').on('click',function(){
   });
 
 });
+
+
+console.log('Reading Battery Level...',bat());
+             
+async function bat(){
+  setTimeout(async function  () {
+    console.log('OK');
+    const value = await characteristic.readValue();
+    var batteryLevel = value.getUint8(0);
+    console.log('> Battery Level is ' + batteryLevel + '%');       
+    $('.device-level').val(batteryLevel)
+    bat();
+  },5000);            
+};

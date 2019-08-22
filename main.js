@@ -1,9 +1,10 @@
 if (!navigator.bluetooth) {
-  alert('Desculpe, seu navegador não suporta Bluetooth API');
+  alert('Desculpe, seu navegador não suporta Bluetooth API '<br>'Utilize a versão mais atualizada do Google Chrome' );
 }
 
 
 const SEND_SERVICE = 0xFFE0;
+const ligaLedBtn = document.getElementById('ligaLed');
 
 async function btn() {
   try {
@@ -18,28 +19,15 @@ async function btn() {
 
     $('.device-name').val(device.name)
  
-    console.log('Connecting to GATT Server...');
+    console.log('Connecting to GATT Server...');    
     const server = await device.gatt.connect();
 
-    console.log('Getting Battery Service...');
-    const service = await server.getPrimaryService('battery_service');
+    console.log('Getting Primary Service...');
+    const service = await server.getPrimaryService('SEND_SERVICE');
 
-    console.log('Getting Battery Level Characteristic...');
-    const characteristic = await service.getCharacteristic('battery_level');
-    
-    
-    console.log('Reading Battery Level...',bat());
-             
-    async function bat(){
-      setTimeout(async function  () {
-        console.log('OK');
-        const value = await characteristic.readValue();
-        var batteryLevel = value.getUint8(0);
-        console.log('> Battery Level is ' + batteryLevel + '%');       
-        $('.device-level').val(batteryLevel)
-        bat();
-      },5000);            
-    };
+    console.log('Getting Characteristic...');
+    const characteristic = await service.getCharacteristic('SEND_SERVICE');
+          
             
   } catch (error) {
     console.log('Errooo! ' + error);
