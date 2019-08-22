@@ -5,7 +5,8 @@ async function btn() {
       filters: [{
         //services: ['battery_service']
         name: 'BLE'
-      }]
+      }],
+      optionalServices: ['battery_service']
     });    
 
     $('.device-name').val(device.name)
