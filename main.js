@@ -32,6 +32,8 @@ async function btn() {
         console.log('Errooo! ' + error);     
       })
     });
+  }
+} 
 
     //$('.device-name').val(device.name)
 
@@ -63,7 +65,4 @@ async function btn() {
       ligaLedBtn[action]('click',acendeLED);
     }
             
-  } catch (error) {
-    console.log('Errooo! - 2 ' + error)
-  }
-}
+  
