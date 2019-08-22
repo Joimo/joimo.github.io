@@ -2,7 +2,7 @@ if (!navigator.bluetooth) {
   alert('Sorry, your browser doesn\'t support Bluetooth API');
 }
 
-const MY_BLUETOOTH_NAME = 'CC41-A';
+const MY_BLUETOOTH_NAME = 'BLE';
 const SEND_SERVICE = 0xFFE0;
 const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
 
