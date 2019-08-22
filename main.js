@@ -25,10 +25,10 @@ async function btn() {
     const server = await device.gatt.connect();
 
     console.log('Getting Primary Service...');
-    const service = await server.getPrimaryService('SEND_SERVICE');
+    const service = await server.getPrimaryService(SEND_SERVICE);
 
     console.log('Getting Characteristic...');
-    const characteristic = await service.getCharacteristic('SEND_SERVICE');
+    const characteristic = await service.getCharacteristic(SEND_SERVICE);
     console.log('yes');
             
   } catch (error) {
