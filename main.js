@@ -6,4 +6,5 @@ function connect() {
     ]
   });
   console.log(device.name);
+  $('.device-name').val(device.name)
 }
