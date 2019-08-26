@@ -9,11 +9,11 @@ const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
 const controlButtonsListElements = document.querySelectorAll('.control-buttons > li');
 const connectButton = document.getElementById('connectButton');
 const disconnectButton = document.getElementById('disconnectButton');
-//const lightOffButton = document.getElementById('lightOff');
+const lightOffButton = document.getElementById('lightOff');
 const toggleRedLightButton = document.getElementById('toggleRedLight');
-//const toggleBlueLightButton = document.getElementById('toggleBlueLight');
-//const toggleGreenLightButton = document.getElementById('toggleGreenLight');
-//const runBlinkLightButton = document.getElementById('runBlinkLight');
+const toggleBlueLightButton = document.getElementById('toggleBlueLight');
+const toggleGreenLightButton = document.getElementById('toggleGreenLight');
+const runBlinkLightButton = document.getElementById('runBlinkLight');
 
 let toggleLigthCharacteristic;
 let myDevice;
