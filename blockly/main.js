@@ -1,5 +1,5 @@
 function click() {
-    alert('Hello');
+    alert("Hello");
 }
 
 
