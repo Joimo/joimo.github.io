@@ -45,7 +45,22 @@
 	}
 	function test(valor) {
 		alert("Valor recebido");
+		const code = valor;
+		
+		if (code === 1) {
+			toggleLigthCharacteristic.writeValue(Uint8Array.of(code));
+		
+			return;
+		  }
+		
+		  toggleLigthCharacteristic.readValue()
+			.then(currentCode => {
+			  const convertedCode = currentCode.getUint8(0);
+		
+			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+			});
 	}
+	  
 
 	Connect.onclick = function() {
 		connect();
