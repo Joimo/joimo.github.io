@@ -43,7 +43,9 @@
     	});
 		
 	}
-
+	function test(valor) {
+		alert("Valor recebido");
+	}
 
 	Connect.onclick = function() {
 		connect();
@@ -69,7 +71,7 @@ Blockly.JavaScript['liga_led'] = function(block) {
 	//var code = "";
 	//console.log(code);	
 	console.log(valor);
-	alert(valor);
+	test(valor);
 	return valor;
   };
 
