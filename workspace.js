@@ -1,14 +1,4 @@
-if (!navigator.bluetooth) {
-	alert('Sorry, your browser doesn\'t support Bluetooth API');
-  }
-  
-  const MY_BLUETOOTH_NAME = 'BLE';
-  const SEND_SERVICE = 0xFFE0;
-  const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
-
-  const toggleRedLightButton;
-
-  Blockly.Blocks['liga_led'] = {
+Blockly.Blocks['liga_led'] = {
 	init: function() {
 	  this.appendValueInput("7")
 		  .setCheck(null)
@@ -32,6 +22,17 @@ Blockly.JavaScript['liga_led'] = function(block) {
 	return valor;
   };
 
+if (!navigator.bluetooth) {
+	alert('Sorry, your browser doesn\'t support Bluetooth API');
+  }
+  
+  const MY_BLUETOOTH_NAME = 'BLE';
+  const SEND_SERVICE = 0xFFE0;
+  const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
+
+  const toggleRedLightButton;
+
+  
   
   const controlButtonsListElements = document.querySelectorAll('.control-buttons > li');
   const connectButton = document.getElementById('connectButton');
