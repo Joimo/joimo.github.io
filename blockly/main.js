@@ -1,12 +1,3 @@
-function click() {
-    alert("Hello");
-}
-
-
-if (!navigator.bluetooth) {
-	alert('Sorry, your browser doesn\'t support Bluetooth API');
-}
-
 const connectButton = document.getElementById('connectButton');
 const toggleLigthCharacteristic;
 
