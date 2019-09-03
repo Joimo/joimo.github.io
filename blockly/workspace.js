@@ -39,9 +39,9 @@
       	toggleLigthCharacteristic = characteristic;
 
 		//var testando = Uint8Array.of(7);
-		//return toggleLigthCharacteristic.writeValue(testando);
-	
+		//return toggleLigthCharacteristic.writeValue(testando);		
 		
+
 	    //toggleButtonsVisible();
       	toggleItemsEventListeners('addEventListener');
     	})
@@ -53,22 +53,19 @@
 
 	function test(valor) {
 		alert("Valor recebido");
+					
 		const code = Uint8Array.of(valor);
 		//const dado = code;
 		console.log("Code: " + code);
 		
-		return this.toggleLigthCharacteristic.writeValue(code);
+		//toggleLigthCharacteristic.writeValue(code);
 
-		if (code === 1) {
+		if (code == 7) {
 
-			return toggleLigthCharacteristic.writeValue(Uint8Array.of(code));			
+			toggleLigth(code);
 
-		  } else {
-				toggleLigthCharacteristic.readValue().then(code => {
-					const convertedCode = code.getUint8(0);
-					return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
-				});						
-		  }		
+		} 	
+		  	  					
 		
 	}	  
 
