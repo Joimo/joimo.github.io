@@ -57,13 +57,12 @@
 			toggleLigthCharacteristic.writeValue(Uint8Array.of(dado));
 		
 			return;
+		  } else {
+				const convertedCode = dado.getUint8(0);
+				toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
 		  }
+		  
 		
-		  toggleLigthCharacteristic.readValue().then(currentCode => {
-			  const convertedCode = currentCode.getUint8(0);
-		
-			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
-			});
 	}
 	  
 
