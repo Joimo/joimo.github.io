@@ -49,17 +49,17 @@
 	function test(valor) {
 		alert("Valor recebido");
 		const code = valor;
-		const dado = Number(event.target.dataset.code);
+		const dado = code;
 		console.log("Code: " + code);
 		
-		if (dado === 1) {
+		if (code === 1) {
 
-			return toggleLigthCharacteristic.writeValue(Uint8Array.of(dado));			
+			return toggleLigthCharacteristic.writeValue(Uint8Array.of(code));			
 
 		  } else {
 
-				const convertedCode = dado.getUint8(0);
-				return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
+				const convertedCode = code.getUint8(0);
+				return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
 		  }		
 		
 	}	  
