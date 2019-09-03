@@ -19,22 +19,18 @@
 		const SEND_SERVICE = 0xFFE0;
 		const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
 
-		let optionalServices = document.querySelector('#optionalServices').value
-    	.split(/, ?/).map(s => s.startsWith('0x') ? parseInt(s) : s)
-    	.filter(s => s && BluetoothUUID.getService);
+		
 
 		navigator.bluetooth.requestDevice({
-		//	'filters': 
-		//	[
-		//		{ 'namePrefix': ['BLE'] }
-		//	],
-		//	'Services': 
-		//	[
-		//		SEND_SERVICE
-		//	]
-		acceptAllDevices: true,
-		optionalServices: optionalServices
-			
+			'filters': 
+			[
+				{ 'namePrefix': ['BLE'] }
+			],
+			'Services': 
+			[
+				SEND_SERVICE
+			]
+					
 		})
 		.then(device => {
 			console.log('Got device: ' + device.name);
