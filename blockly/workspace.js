@@ -60,11 +60,29 @@
 		//const dado = code;
 		console.log("Code: " + code);
 		
+<<<<<<< Updated upstream
 		toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
 				  
 
       			
     	});
+=======
+		if (code === 1) {
+
+			toggleLigthCharacteristic.writeValue(Uint8Array.of(code));
+		
+			return;
+		  }
+		
+		  toggleLigthCharacteristic.readValue()
+		  .then(currentCode => {
+			const convertedCode = currentCode.getUint8(0);
+			console.log(convertedCode);
+		
+			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+			});
+		}
+>>>>>>> Stashed changes
 
 		//toggleLigthCharacteristic.writeValue(code);
 
