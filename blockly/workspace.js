@@ -38,7 +38,7 @@
     	.then(characteristic => {
       	toggleLigthCharacteristic = characteristic;
 
-		var testando = Uint8Array.of(7);
+		//var testando = Uint8Array.of(7);
 		return toggleLigthCharacteristic.writeValue(testando);
 	
 	    //toggleButtonsVisible();
@@ -49,13 +49,14 @@
     	});
 		
 	}
+
 	function test(valor) {
 		alert("Valor recebido");
-		const code = valor;
-		const dado = code;
+		const code = Uint8Array.of(valor);
+		//const dado = code;
 		console.log("Code: " + code);
 		
-
+		this.toggleLigthCharacteristic.writeValue(code);
 
 		if (code === 1) {
 
