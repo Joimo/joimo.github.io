@@ -52,19 +52,17 @@
 		const dado = Number(event.target.dataset.code);
 		console.log("Code: " + code);
 		
+		if (dado === 1) {
 
-		if (code === 1) {
-			toggleLigthCharacteristic.writeValue(Uint8Array.of(dado));
-		
-			return;
+			return toggleLigthCharacteristic.writeValue(Uint8Array.of(dado));			
+
 		  } else {
+
 				const convertedCode = dado.getUint8(0);
-				toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
-		  }
-		  
+				return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
+		  }		
 		
-	}
-	  
+	}	  
 
 	Connect.onclick = function() {
 		connect();
