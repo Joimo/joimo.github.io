@@ -57,9 +57,10 @@
 			return toggleLigthCharacteristic.writeValue(Uint8Array.of(code));			
 
 		  } else {
-
-				const convertedCode = code.getUint8(0);
-				return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+				toggleLigthCharacteristic.readValue().then(code => {
+					const convertedCode = code.getUint8(0);
+					return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+				});						
 		  }		
 		
 	}	  
