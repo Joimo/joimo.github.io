@@ -38,8 +38,8 @@ function connect() {
 	.then(characteristic => {
 	  toggleLigthCharacteristic = characteristic;
 
-	//var testando = Uint8Array.of(7);
-	//return toggleLigthCharacteristic.writeValue(testando);		
+	var testando = Uint8Array.of(7);
+	return toggleLigthCharacteristic.writeValue(testando);		
 	
 
 	//toggleButtonsVisible();
