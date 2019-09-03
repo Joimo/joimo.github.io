@@ -38,6 +38,9 @@
     	.then(characteristic => {
       	toggleLigthCharacteristic = characteristic;
 
+		var testando = Uint8Array.of(7);
+		return toggleLigthCharacteristic.writeValue(testando);
+	
 	    //toggleButtonsVisible();
       	toggleItemsEventListeners('addEventListener');
     	})
@@ -52,6 +55,8 @@
 		const dado = code;
 		console.log("Code: " + code);
 		
+
+
 		if (code === 1) {
 
 			return toggleLigthCharacteristic.writeValue(Uint8Array.of(code));			
