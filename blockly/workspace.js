@@ -60,10 +60,12 @@
 		//const dado = code;
 		console.log("Code: " + code);
 		
-		toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+		toggleLigthCharacteristic.readValue()
+		.then(currentCode => {
+				  const convertedCode = 1;
 				  
 
-      			
+      			toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
     	});
 
 		//toggleLigthCharacteristic.writeValue(code);
