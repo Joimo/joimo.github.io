@@ -52,19 +52,21 @@
 	}
 
 	function test(valor) {
-		alert("Valor recebido");
-					
+		console.log("Valor recebido");					
 		const code = Uint8Array.of(valor);
 		//const dado = code;
 		console.log("Code: " + code);
 		
+		toggleLigthCharacteristic.readValue()
+    		.then(currentCode => {
+      			const convertedCode = currentCode.getUint8(0);
+
+      			toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+    	});
+
 		//toggleLigthCharacteristic.writeValue(code);
 
-		if (code == 7) {
-
-			toggleLigth(code);
-
-		} 	
+			
 		  	  					
 		
 	}	  

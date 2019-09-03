@@ -53,18 +53,22 @@ function lightOffButtonClickHandler() {
 
 function toggleLightButtonClickHandler(event) {
   const code = Number(event.target.dataset.code);
+  
   console.log(event.target.dataset.code);
   console.log("Code: " + code);
 
+
   if (code === 1) {
+
     toggleLigthCharacteristic.writeValue(Uint8Array.of(code));
 
     return;
   }
 
   toggleLigthCharacteristic.readValue()
-    .then(currentCode => {
-      const convertedCode = currentCode.getUint8(0);
+  .then(currentCode => {
+    const convertedCode = currentCode.getUint8(0);
+    console.log(convertedCode);
 
       toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
     });
