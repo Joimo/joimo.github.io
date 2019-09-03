@@ -19,8 +19,6 @@
 		const SEND_SERVICE = 0xFFE0;
 		const SEND_SERVICE_CHARACTERISTIC = 0xFFE1;
 
-		
-
 		navigator.bluetooth.requestDevice({
 			'filters': 
 			[
@@ -30,7 +28,6 @@
 			[
 				SEND_SERVICE
 			]
-					
 		})
 		.then(device => {
 			console.log('Got device: ' + device.name);
@@ -39,7 +36,7 @@
 		.then(server => server.getPrimaryService(SEND_SERVICE))
     	.then(service => service.getCharacteristic(SEND_SERVICE_CHARACTERISTIC))
     	.then(characteristic => {
-	      	toggleLigthCharacteristic = characteristic;
+      	toggleLigthCharacteristic = characteristic;
 
 		//var testando = Uint8Array.of(7);
 		//return toggleLigthCharacteristic.writeValue(testando);		
@@ -60,14 +57,20 @@
 		//const dado = code;
 		console.log("Code: " + code);
 		
-		toggleLigthCharacteristic.readValue()
-		.then(currentCode => {
-				  const convertedCode = 1;
-				  
+		if (code === 1) {
 
-      			toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
-    	});
-
+			toggleLigthCharacteristic.writeValue(Uint8Array.of(code));
+		
+			return;
+		  }
+		
+		  toggleLigthCharacteristic.readValue()
+		  .then(currentCode => {
+			const convertedCode = currentCode.getUint8(0);
+			console.log(convertedCode);
+		
+			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+			});
 		//toggleLigthCharacteristic.writeValue(code);
 
 			
