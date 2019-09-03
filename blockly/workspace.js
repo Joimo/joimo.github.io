@@ -39,8 +39,9 @@
       	toggleLigthCharacteristic = characteristic;
 
 		//var testando = Uint8Array.of(7);
-		return toggleLigthCharacteristic.writeValue(testando);
+		//return toggleLigthCharacteristic.writeValue(testando);
 	
+		
 	    //toggleButtonsVisible();
       	toggleItemsEventListeners('addEventListener');
     	})
