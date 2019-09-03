@@ -3,6 +3,9 @@
 	const Connect = document.querySelector('#connectButton');
 
 
+	const toggleRedLightButton = document.getElementById('toggleRedLight');
+
+
 	let toggleLigthCharacteristic;
 
 	function connect() {
@@ -35,7 +38,7 @@
     	.then(characteristic => {
       	toggleLigthCharacteristic = characteristic;
 
-	    toggleButtonsVisible();
+	    //toggleButtonsVisible();
       	toggleItemsEventListeners('addEventListener');
     	})
     		.catch(error => {
@@ -46,18 +49,20 @@
 	function test(valor) {
 		alert("Valor recebido");
 		const code = valor;
+		const dado = Number(event.target.dataset.code);
+		console.log("Code: " + code);
 		
+
 		if (code === 1) {
-			toggleLigthCharacteristic.writeValue(Uint8Array.of(code));
+			toggleLigthCharacteristic.writeValue(Uint8Array.of(dado));
 		
 			return;
 		  }
 		
-		  toggleLigthCharacteristic.readValue()
-			.then(currentCode => {
+		  toggleLigthCharacteristic.readValue().then(currentCode => {
 			  const convertedCode = currentCode.getUint8(0);
 		
-			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === dado ? 0 : dado));
 			});
 	}
 	  
@@ -65,6 +70,11 @@
 	Connect.onclick = function() {
 		connect();
 	};
+
+	function toggleItemsEventListeners(action) {
+		toggleRedLightButton[action]('click', test);
+		
+	  }
 
 //--------------------------------------------------------------
 
