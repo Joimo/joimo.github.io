@@ -59,7 +59,7 @@
 		
 		toggleLigthCharacteristic.readValue()
     		.then(currentCode => {
-      			const convertedCode = currentCode.getUint8(0);
+      			const convertedCode = 1;
 
       			toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
     	});
