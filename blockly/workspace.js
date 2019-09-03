@@ -56,7 +56,7 @@
 		//const dado = code;
 		console.log("Code: " + code);
 		
-		this.toggleLigthCharacteristic.writeValue(code);
+		return this.toggleLigthCharacteristic.writeValue(code);
 
 		if (code === 1) {
 
