@@ -39,7 +39,7 @@
 		.then(server => server.getPrimaryService(SEND_SERVICE))
     	.then(service => service.getCharacteristic(SEND_SERVICE_CHARACTERISTIC))
     	.then(characteristic => {
-      	toggleLigthCharacteristic = characteristic;
+	      	toggleLigthCharacteristic = characteristic;
 
 		//var testando = Uint8Array.of(7);
 		//return toggleLigthCharacteristic.writeValue(testando);		
@@ -60,8 +60,11 @@
 		//const dado = code;
 		console.log("Code: " + code);
 		
-		toggleLigthCharacteristic.readValue().then(currentCode => {
-      			const convertedCode = 1;
+		toggleLigthCharacteristic.readValue(code)
+		.then(currentCode => {
+				  const convertedCode = 1;
+				  
+
       			toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
     	});
 
