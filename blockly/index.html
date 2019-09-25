@@ -2,22 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Blockly Demo: Fixed Blockly</title>
+  <title>Blockly + BLE</title>
   <script src="blockly_compressed.js"></script>
   <script src="javascript_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="msg/js/en.js"></script> 
+  <link rel="stylesheet" href="main.css">
 
 
   <style>
-    body {
-      background-color: #fff;
-      font-family: sans-serif;
-    }
-    h1 {
-      font-weight: normal;
-      font-size: 140%;
-    }
+  
   </style>
 </head>
 <body>
@@ -25,20 +19,19 @@
   <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
     <a href="../index.html">Demos</a> &gt; Fixed Blockly</h1>
 -->
-  <p>Test Blockly.</p>
-  <p>Ligando Led.</p>
+  <div id="header">
+    <p>Test Blockly 2.</p>
+    <p>Robo Andando.</p>
 
-  <p>
-    <button id="connectButton"> Conectar </button> 
-  </p>
-    <button id="toggleRedLight" data-code="7">Toggle red light</button>
-  <p> 
+    <p>
+      <button id="connectButton"> Conectar </button>  
+    </p> 
 
-  </p> 
-
-   <p>
+    <p>
      <button onclick="runCode()">Run Code</button>
-   </p> 
+    </p> 
+  
+  </div>
   
   <!-- Area do blockly -->
   <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
@@ -46,6 +39,9 @@
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Led">
       <block id="7" type="liga_led"></block>
+    </category>
+    <category name="Motor">
+      <block id="" type="motor"></block>
     </category>
   </xml>
 

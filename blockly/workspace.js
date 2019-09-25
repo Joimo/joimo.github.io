@@ -65,10 +65,7 @@ function test(valor) {
 	});
 
 	//toggleLigthCharacteristic.writeValue(code);
-
-		
 								
-	
 }	  
 
 Connect.onclick = function() {
