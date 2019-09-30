@@ -23,7 +23,7 @@ function connect() {
 		'filters': 
 		[
 			{ 'namePrefix': ['BLE'] },
-			{ 'namePrefix': ['='] }
+			{ 'namePrefix': ['Con'] }
 		],
 		'Services': 
 		[
