@@ -22,8 +22,8 @@ function connect() {
 	navigator.bluetooth.requestDevice({
 		'filters': 
 		[
-			{ 'namePrefix': ['BLE'] },
-			{ 'namePrefix': ['Con'] }
+			{ 'namePrefix': ['='] },
+			{ 'namePrefix': ['B'] }
 		],
 		'Services': 
 		[
