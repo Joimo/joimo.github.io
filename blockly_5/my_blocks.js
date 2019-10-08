@@ -269,9 +269,12 @@ function connect() {
     //const dado = code;
     console.log("Code: " + code);
     
-    return toggleLigthCharacteristic.readValue().then(currentCode => {const convertedCode = 1;
-    toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
-    });
+    return toggleLigthCharacteristic.writeValue().toggleLigthCharacteristic.writeValue(code);	
+    //.then(currentCode => {
+      //  const convertedCode = 1;
+        //toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+        
+    //});
 
     //toggleLigthCharacteristic.writeValue(code);	
     //console.log("Code enviado com sucesso!, CODE:" + code);
