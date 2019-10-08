@@ -53,6 +53,7 @@ function connect() {
 }
 
 function test(valor) {
+
 	console.log("Valor recebido");					
 	const code = Uint8Array.of(valor);
 	//const dado = code;
@@ -65,8 +66,8 @@ function test(valor) {
 			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
 	});
 
-	//toggleLigthCharacteristic.writeValue(code);
-								
+	//toggleLigthCharacteristic.writeValue(code);								
+	return null;
 }	  
 
 Connect.onclick = function() {
@@ -74,8 +75,7 @@ Connect.onclick = function() {
 };
 
 function toggleItemsEventListeners(action) {
-	toggleRedLightButton[action]('click', test);
-	
+	toggleRedLightButton[action]('click', test);	
   }
 
 //--------------------------------------------------------------
@@ -85,6 +85,8 @@ init: function() {
   this.appendValueInput("7")
 	  .setCheck(null)
 	  .appendField("Ligar Led");
+  this.setPreviousStatement(false, null);
+  this.setNextStatement(true, 'Action');
   this.setColour(120);
 this.setTooltip("");
 this.setHelpUrl("");
@@ -92,14 +94,43 @@ this.setHelpUrl("");
 };
 
 Blockly.JavaScript['liga_led'] = function(block) {
-console.log("cheguei");
-var value_7 = Blockly.JavaScript.valueToCode(block, '7', Blockly.JavaScript.ORDER_ATOMIC);	
-var valor = 7;
-//var code = "";
-//console.log(code);	
-console.log(valor);
-test(valor);
-return valor;
+	console.log("Printando Liga led....");
+	var value_7 = Blockly.JavaScript.statementToCode(block, 'liga_led');	
+	var valor_liga = 7;
+	//var code = "";
+	//console.log(code);	
+	console.log(valor_liga);
+	//test(valor);
+	//const code = Uint8Array.of(valor_liga);
+	//const code = test(valor_liga);
+	const code = valor_liga;
+	return [value_7];
+
 };
+
+Blockly.Blocks['avancar'] = {
+	init: function() {
+	  this.appendValueInput("frente")
+		  .setCheck(null)
+		  .appendField("Avançar");
+	  this.setPreviousStatement(true, null);
+	  this.setNextStatement(true, null);
+	  this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+	}
+  };
+
+Blockly.JavaScript['avancar'] = function(block) {
+	console.log("Printando Avançar...");
+	var value_frente = Blockly.JavaScript.valueToCode(block, 'frente', Blockly.JavaScript.ORDER_ATOMIC);
+	// TODO: Assemble JavaScript into code variable.
+	
+	var valor_avanca = 1;
+	//test(valor);
+	console.log(valor_avanca);
+	const code = valor_avanca;	
+	return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  };
 
 

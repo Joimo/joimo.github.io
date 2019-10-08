@@ -2,4 +2,8 @@
   <category name="Led">
     <block type="liga_led"/>
   </category>
+  
+   <category name="Ações">
+    <block type="avancar"/>
+  </category>
 </xml>

@@ -1,0 +1,15 @@
+[{
+  "type": "avancar",
+  "message0": "Avançar %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "frente"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}]
