@@ -51,7 +51,7 @@ Blockly.Blocks.draw_shape = {
     }
 },
 Blockly.Python.draw_shape = function(a) {
-    sleep(1000);
+    sleep(1500);
     console.log("Cheguei1");    
     var code = 7;
     test(code);
@@ -114,7 +114,7 @@ Blockly.Blocks.draw_circle = {
     }
 },
 Blockly.Python.draw_circle = function(a) {
-    sleep(1000);
+    sleep(1500);
     console.log("Cheguei2");    
     var code = 1;
     test(code);
