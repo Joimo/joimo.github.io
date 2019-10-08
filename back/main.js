@@ -25,7 +25,7 @@ function connectButtonPointerUpHandler() {
     filters:
       [
         { name: 'BLE' },
-        { namePrefix: 'B'},
+        { namePrefix: '='},
         { services: [SEND_SERVICE] },
       ]
   })
