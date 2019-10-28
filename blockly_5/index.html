@@ -54,10 +54,10 @@
   
   
 
-  
+ <!--
 
   <pre id="output" ></pre> 
-  <!-- If you want turtle graphics include a canvas -->
+  
   <div style="float:right" id="code_editor">
   <h3>Try This</h3> 
     <form> 
@@ -70,31 +70,31 @@ print("Hello World")
     <button type="button" onclick="runit_editor()">Run</button> 
     </form> 
   </div> 
-
-  <div style="float:right" id="mycanvas"></div> 
+  -->
+  <div style="margin: 10px" id="mycanvas"></div> 
 
   <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 
   <xml id="toolbox" style="display: none">
     <!--硬编码比较丑-->
-    <category name="Turtle">
-      <block type="draw_move"></block>
-      <block type="draw_turn"></block>
-      <block type="draw_shape"></block>
-      <block type="draw_pen"></block>
-      <block type="draw_color"></block>
-      <block type="draw_write"></block>
-      <block type="draw_circle"></block>
+    <category name="Comandos">
+      <!--<block type="draw_move"></block> -->
+      <!--<block type="draw_turn"></block> -->
+      <!--<block type="draw_shape"></block> -->
+      <!--<block type="draw_pen"></block> -->
+      <!--<block type="draw_color"></block> -->
+      <!--<block type="draw_write"></block> -->
+      <!--<block type="draw_circle"></block> -->
       <block type="draw_stamp"></block>
       <block type="begin_fill"></block>
       <block type="end_fill"></block>
-      <block type="goto"></block>
-      <block type="draw_speed"></block>
-      <block type="draw_pos"></block>
+      <!--<block type="goto"></block> -->
+      <!--<block type="draw_speed"></block> -->
+      <!--<block type="draw_pos"></block>-->
     </category>
 
 
-
+    <!--
     <category name="Color">
       <block type="colour_picker"></block>
       <block type="colour_random"></block>
@@ -145,7 +145,7 @@ print("Hello World")
       <block type="draw_move"></block>
       <block type="draw_turn"></block>
     </category>
-    
+    -->
   </xml>
 
   <script>

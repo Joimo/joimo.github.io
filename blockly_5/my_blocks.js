@@ -127,7 +127,7 @@ Blockly.Python.draw_circle = function(a) {
 Blockly.Blocks.draw_stamp = {
     init: function() {
         this.setColour(160),
-        this.appendDummyInput().appendField("stamp"),
+        this.appendDummyInput().appendField("Ir em frente"),
         this.setPreviousStatement(!0),
         this.setNextStatement(!0)
     }
@@ -140,7 +140,7 @@ Blockly.Python.draw_stamp = function(a) {
 Blockly.Blocks.begin_fill = {
     init: function() {
         this.setColour(160),
-        this.appendDummyInput().appendField("begin fill"),
+        this.appendDummyInput().appendField("Girar para direita"),
         this.setPreviousStatement(!0),
         this.setNextStatement(!0)
     }
@@ -153,7 +153,7 @@ Blockly.Python.begin_fill = function(a) {
 Blockly.Blocks.end_fill = {
     init: function() {
         this.setColour(160),
-        this.appendDummyInput().appendField("end fill"),
+        this.appendDummyInput().appendField("Girar para esquerda"),
         this.setPreviousStatement(!0),
         this.setNextStatement(!0)
     }
