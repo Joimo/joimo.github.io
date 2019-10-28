@@ -104,7 +104,7 @@ Blockly.JavaScript['liga_led'] = function(block) {
 	//const code = Uint8Array.of(valor_liga);
 	//const code = test(valor_liga);
 	const code = valor_liga;
-	return [value_7];
+	return test(code);
 
 };
 

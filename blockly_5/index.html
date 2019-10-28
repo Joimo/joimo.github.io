@@ -29,23 +29,19 @@
     }
   </style>
 </head>
-<body>
-  <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
-    <a href="../index.html">Demos</a> &gt; Fixed Blockly</h1>
-
-  <p>This is a simple demo of injecting Blockly into a fixed-sized 'div' element.</p>
-
-  <p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p>
+<body>   
+  
+  <p>
+    <button id="connectButton" onclick="connect()"> Conectar ao Robô</button>  
+  </p> 
 
   <p>
-    <button onclick="showCode()" >Show Python</button>
+    <!--<button onclick="showCode()" >Show Python</button> -->
     <!-- <button onclick="runCode()">Run Python</button> -->
-    <button type="button" onclick="runit()">Run</button> 
+    <button type="button" onclick="runit()">Executar</button> 
   </p>
 
-  <p>
-    <button id="connectButton" onclick="connect()"> Conectar </button>  
-  </p> 
+  
 
   <pre id="output" ></pre> 
   <!-- If you want turtle graphics include a canvas -->
