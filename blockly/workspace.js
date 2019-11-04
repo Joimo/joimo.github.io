@@ -63,7 +63,7 @@ function test(valor) {
 		.then(currentCode => {
 			  const convertedCode = 1;
 
-			  toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
+			  return toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
 	});
 
 	//toggleLigthCharacteristic.writeValue(code);								
