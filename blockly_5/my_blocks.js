@@ -118,7 +118,7 @@ Blockly.Python.draw_circle = function(a) {
     console.log("Cheguei2");    
     var code = 1;
     test(code);
-    console.log("Dale");    
+    //console.log("Dale");    
 
     Blockly.Python.definitions_.import_turtle = "import turtle\nturtle=turtle.Turtle()";
     var b = Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) || "50";
@@ -151,8 +151,8 @@ Blockly.Python.begin_fill = function(a) {
     console.log("Cheguei1");    
     var code = 7;
     test(code);
-    console.log("Retornei das cinzas");
-    
+    //console.log("Retornei das cinzas");
+
     return Blockly.Python.definitions_.import_turtle = "import turtle\nturtle=turtle.Turtle()",
     "turtle.begin_fill()\n"
 }
@@ -275,8 +275,13 @@ function connect() {
     const code = Uint8Array.of(valor);
     //const dado = code;
     console.log("Code: " + code);
+
+    toggleLigthCharacteristic.readValue()
+		.then(currentCode => {			  
+			  return toggleLigthCharacteristic.writeValue().toggleLigthCharacteristic.writeValue(code);	
+	});
     
-    return toggleLigthCharacteristic.writeValue().toggleLigthCharacteristic.writeValue(code);	
+    
     //.then(currentCode => {
       //  const convertedCode = 1;
         //toggleLigthCharacteristic.writeValue(Uint8Array.of(convertedCode === code ? 0 : code));
