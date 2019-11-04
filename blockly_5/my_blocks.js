@@ -108,7 +108,7 @@ Blockly.Python.draw_write = function(a) {
 Blockly.Blocks.draw_circle = {
     init: function() {
         this.setColour(160),
-        this.appendValueInput("VALUE").appendField("circle"),
+        this.appendValueInput("VALUE").appendField("Ir em frente"),
         this.setPreviousStatement(!0),
         this.setNextStatement(!0)
     }
@@ -119,6 +119,7 @@ Blockly.Python.draw_circle = function(a) {
     var code = 1;
     test(code);
     console.log("Dale");    
+
     Blockly.Python.definitions_.import_turtle = "import turtle\nturtle=turtle.Turtle()";
     var b = Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) || "50";
     return "turtle.circle(" + b + ")\n"
@@ -146,6 +147,12 @@ Blockly.Blocks.begin_fill = {
     }
 },
 Blockly.Python.begin_fill = function(a) {
+    sleep(1500);
+    console.log("Cheguei1");    
+    var code = 7;
+    test(code);
+    console.log("Retornei das cinzas");
+    
     return Blockly.Python.definitions_.import_turtle = "import turtle\nturtle=turtle.Turtle()",
     "turtle.begin_fill()\n"
 }
