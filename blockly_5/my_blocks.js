@@ -277,7 +277,8 @@ function connect() {
     console.log("Code: " + code);
 
     toggleLigthCharacteristic.readValue()
-		.then(currentCode => {			  
+		.then(currentCode => {		
+              console.log("retornando");
 			  return toggleLigthCharacteristic.writeValue().toggleLigthCharacteristic.writeValue(code);	
 	});
     
