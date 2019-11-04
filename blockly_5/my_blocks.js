@@ -276,11 +276,9 @@ function connect() {
     //const dado = code;
     console.log("Code: " + code);
 
-    toggleLigthCharacteristic.readValue()
-		.then(currentCode => {		
-              alert("retornando");
-			  return toggleLigthCharacteristic.writeValue().toggleLigthCharacteristic.writeValue(code);	
-	});
+    
+	return toggleLigthCharacteristic.writeValue(code);	
+	
     
     
     //.then(currentCode => {
