@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GeoCart</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="./libs/v6.1.1-dist/ol.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+                <form class="paypal-form ">
+                    <div class="logo text-center"> 
+                       <img id="geo-logo" src="/img/logo-app.png">
+                       <p id="geo-texto">GEOCART</p>
+                    </div>
+                        
+                    <div class="content">
+                        <input id="email" name="email" type="email"  autocomplete="off" placeholder="Email" class="element">
+                            <input id="password" name="email" type="password"  autocomplete="off" placeholder="Password" class="element">
+                            <button class="buttonlogin actionbutton" onclick="verifyLogin()">Log In</button>
+                                <div class="forgotlinkholder">
+                                <a href="#" >Esqueceu sua senha?</a>
+                                </div>
+                            <!--<button class="buttonsignup actionbutton">AAA</button>   -->
+                            <p style="text-align: center;" href="#" >Não possui conta? <a><strong>Clique aqui!</strong></a></p>
+                    </div>
+                </form>
+        </div>      
+       
+
+
+        <script src="./main.js"></script>
+        <script src="./libs/v6.1.1-dist/ol.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    </body>
+</html>

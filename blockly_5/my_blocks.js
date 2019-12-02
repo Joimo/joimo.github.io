@@ -114,11 +114,9 @@ Blockly.Blocks.draw_circle = {
     }
 },
 Blockly.Python.draw_circle = function(a) {
-    sleep(1500);
-    console.log("Cheguei2");    
+    sleep(1500);    
     var code = 1;
-    test(code);
-    //console.log("Dale");    
+    envia(code);    
 
     Blockly.Python.definitions_.import_turtle = "import turtle\nturtle=turtle.Turtle()";
     var b = Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) || "50";
@@ -220,10 +218,7 @@ Blockly.Python.draw_pos = function(a) {
 
 const Connect = document.querySelector('#connectButton');
 
-const toggleRedLightButton = document.getElementById('toggleRedLight');
-
-
-let toggleLigthCharacteristic;
+let Characteristic;
 
 function connect() {
     if (!navigator.bluetooth) {
@@ -254,7 +249,7 @@ function connect() {
     .then(server => server.getPrimaryService(SEND_SERVICE))
     .then(service => service.getCharacteristic(SEND_SERVICE_CHARACTERISTIC))
     .then(characteristic => {
-    toggleLigthCharacteristic = characteristic;
+        Characteristic = characteristic;
 
     //var testando = Uint8Array.of(7);
     //return toggleLigthCharacteristic.writeValue(testando);		
@@ -269,15 +264,9 @@ function connect() {
     
 }
 
-    async function test(valor) {
-
-    console.log("Valor recebido");					
-    const code = Uint8Array.of(valor);
-    //const dado = code;
-    console.log("Code: " + code);
-
-    
-	return toggleLigthCharacteristic.writeValue(code);	
+    async function envia(valor) {    				
+    const code = Uint8Array.of(valor);    
+	return Characteristic.writeValue(code);	
 	
     
     

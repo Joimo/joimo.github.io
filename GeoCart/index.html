@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GeoCart</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="./libs/v6.1.1-dist/ol.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-1">
+                <div class="sidebar">
+                    <img id="logo-side" src="./img/logo-app.png" alt="">
+                    <h2>GeoCart</h2>
+                    <h3 id="totalCar">Carrinhos Localizados: </h3>
+                    <!--<p id="totalCar"></p>                    -->
+                    <br>
+                    <br>
+                    <div id="dados">
+                        <h3 style="text-align: center;">Informações</h3>
+                        <div id="info-car" style="display: none;">
+                            <p>
+                                <ul style="text-align: left;">
+                                    <li>Latitude: -23.596785 </li>
+                                    <li>Longitude: -51.649255 </li>
+                                    <li>Último registro:</li>
+                                </ul>
+                            </p>
+
+                        </div>
+                    </div>
+
+                   <button id="localizar-car" onclick="localizar()">Localizar</button>
+                </div>
+                
+            </div>
+            <div class="grid-2">
+                    <div id="js-map" class="map"></div>        
+            </div>
+        </div>        
+
+        <div id="map" class="map"><div id="popup"></div></div>
+       
+       
+
+
+        <script src="./main.js"></script>
+        <script src="./libs/v6.1.1-dist/ol.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    </body>
+</html>

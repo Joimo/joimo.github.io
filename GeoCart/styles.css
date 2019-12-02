@@ -1,0 +1,173 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows: 100vh;
+}
+
+.sidebar {
+    margin-left: 15px; 
+    text-align: center;
+}
+
+.sidebar button {    
+    position: absolute;
+    bottom: 25px;
+    left: 100px;    
+}
+
+.grid-1  {    
+
+/*  background-image: url('./img/bg.jpg');    
+    background-position: center;
+    background-size: 1000px 800px;    
+    */
+    background-color: #99928e;
+}
+
+.sidebar h2,h3 {
+    text-align: center;
+    justify-content: center;
+}
+
+#logo-side {
+    width: 100px;
+    height: 100px;    
+    margin: auto;
+    display: block;
+
+}
+
+#dados {
+    background-color:  #777777;
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom: 60px;
+}
+
+/* ---------------------------------------------- */
+.container-fluid {
+    padding:30px;
+}
+
+.paypal-form {   
+    max-width:460px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#F7F9FA;
+    border-radius:5px;
+    padding:60px 20px;
+}
+
+.paypal-form {
+    margin-bottom:5px;
+    color:#003087;    
+}
+
+#geo-logo {
+    margin-top: -30px;
+    margin-bottom: 0px;
+    margin-left: 140px;
+    width: 150px;
+    height: 150px;
+}
+
+
+.paypal-form .content {
+    margin: 0 15%;
+    padding: 0 0 10px;
+}
+
+.paypal-form .forgotlinkholder{
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cbd2d6;
+    text-align: center;
+}
+
+.paypal-form .forgotlinkholder a,.paypal-form .forgotlinkholder a:link,
+.paypal-form .forgotlinkholder a:visited {
+    color: #0079ad;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.paypal-form .buttonlogin {
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    display: block;
+    background-color: #3FA541;
+    border-radius:5px;
+    cursor:pointer;
+    color:#fff;
+    transition: background-color .4s ease-out;
+}
+
+#localizar-car {
+    width: 5%;
+    height: 40px;
+    bottom: 15px;
+    border: 0;
+    
+    background-color: #3FA541;
+    border-radius:5px;
+    cursor:pointer;
+    color:#fff;
+    transition: background-color .4s ease-out;
+}
+
+.paypal-form .buttonlogin:hover {
+    background-color: #3FA541;
+}
+
+.paypal-form .buttonsignup {
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    display: block;
+    background-color: #E1E7EB;
+    border-radius:5px;
+    cursor:pointer;
+    color:#222;
+    transition: background-color .4s ease-out;
+}
+
+.paypal-form .buttonsignup:hover {
+   background-color: #D2DBE1;
+}
+
+.paypal-form .actionbutton {
+    margin-top:10%;
+}
+
+.paypal-form .element {
+    height: 40px;
+    width: 100%;
+    padding:0 10px;
+    margin-bottom:10px;
+    border: 1px solid #9da3a6;
+    background: #fff;
+    border-radius: 5px;
+}
+#geo-texto{
+    color: #515151;
+    text-align: center;
+    margin-top: 5px;    
+    font-family: 'Montserrat';font-size: 30px;
+}
